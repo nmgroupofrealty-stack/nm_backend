@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "site": {
+      ".read": true,
+      "bookings": {
+        ".write": true
+      },
+      "careerApplications": {
+        ".write": true
+      },
+      "$other": {
+        ".write": "auth != null && auth.uid === 'UoRMgrZCPKRXAFNKTgnhNnHYjeA2'"
+      }
+    }
+  }
+}
