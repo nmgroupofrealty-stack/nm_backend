@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "nmgroup-admin",
+    "site": "nmgroup-6ba39",
     "public": "dist",
     "ignore": [
       "firebase.json",
