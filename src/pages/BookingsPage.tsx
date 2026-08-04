@@ -23,7 +23,7 @@ export function BookingsPage() {
               <th>Name</th>
               <th>Phone</th>
               <th>Requirement</th>
-              <th>Preferred date</th>
+              <th>Preferred Date</th>
               <th>Received</th>
               <th />
             </tr>
