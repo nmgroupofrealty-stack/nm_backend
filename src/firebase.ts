@@ -5,31 +5,23 @@ import { getStorage, type FirebaseStorage } from 'firebase/storage'
 
 /**
  * Firebase project: nmgroup-6ba39
- * Database: https://nmgroup-6ba39-default-rtdb.firebaseio.com/
+ * Defaults match the live web app so Hosting builds work even without CI env secrets.
+ * Local `.env` values still override when present.
  */
 const firebaseConfig = {
-  apiKey:
-    (import.meta.env.VITE_FIREBASE_API_KEY as string) ||
-    'AIzaSyCnGrS-KXqFG5xRXUftot62SkolUuNfGW0',
-  authDomain:
-    (import.meta.env.VITE_FIREBASE_AUTH_DOMAIN as string) ||
-    'nmgroup-6ba39.firebaseapp.com',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'AIzaSyCnGrS-KXqFG5xRXUftot62SkolUuNfGW0',
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'nmgroup-6ba39.firebaseapp.com',
   databaseURL:
-    (import.meta.env.VITE_FIREBASE_DATABASE_URL as string) ||
+    import.meta.env.VITE_FIREBASE_DATABASE_URL ||
     'https://nmgroup-6ba39-default-rtdb.firebaseio.com',
-  projectId:
-    (import.meta.env.VITE_FIREBASE_PROJECT_ID as string) || 'nmgroup-6ba39',
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || 'nmgroup-6ba39',
   storageBucket:
-    (import.meta.env.VITE_FIREBASE_STORAGE_BUCKET as string) ||
-    'nmgroup-6ba39.firebasestorage.app',
-  messagingSenderId:
-    (import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID as string) || '297484692476',
-  appId:
-    (import.meta.env.VITE_FIREBASE_APP_ID as string) ||
-    '1:297484692476:web:37606148c494ef17916079',
+    import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || 'nmgroup-6ba39.firebasestorage.app',
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || '297484692476',
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || '1:297484692476:web:37606148c494ef17916079',
 }
 
-export const isFirebaseConfigured = Boolean(firebaseConfig.apiKey?.trim())
+export const isFirebaseConfigured = Boolean(String(firebaseConfig.apiKey || '').trim())
 
 let app: FirebaseApp | null = null
 let auth: Auth | null = null
