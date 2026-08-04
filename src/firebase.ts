@@ -8,7 +8,9 @@ import { getStorage, type FirebaseStorage } from 'firebase/storage'
  * Database: https://nmgroup-6ba39-default-rtdb.firebaseio.com/
  */
 const firebaseConfig = {
-  apiKey: (import.meta.env.VITE_FIREBASE_API_KEY as string) || '',
+  apiKey:
+    (import.meta.env.VITE_FIREBASE_API_KEY as string) ||
+    'AIzaSyCnGrS-KXqFG5xRXUftot62SkolUuNfGW0',
   authDomain:
     (import.meta.env.VITE_FIREBASE_AUTH_DOMAIN as string) ||
     'nmgroup-6ba39.firebaseapp.com',
@@ -20,8 +22,11 @@ const firebaseConfig = {
   storageBucket:
     (import.meta.env.VITE_FIREBASE_STORAGE_BUCKET as string) ||
     'nmgroup-6ba39.firebasestorage.app',
-  messagingSenderId: (import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID as string) || '',
-  appId: (import.meta.env.VITE_FIREBASE_APP_ID as string) || '',
+  messagingSenderId:
+    (import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID as string) || '297484692476',
+  appId:
+    (import.meta.env.VITE_FIREBASE_APP_ID as string) ||
+    '1:297484692476:web:37606148c494ef17916079',
 }
 
 export const isFirebaseConfigured = Boolean(firebaseConfig.apiKey?.trim())
