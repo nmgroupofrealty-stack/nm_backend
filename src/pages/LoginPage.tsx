@@ -81,8 +81,9 @@ export function LoginPage() {
 
             {!isFirebaseConfigured ? (
               <p className="login-error">
-                Add <code>VITE_FIREBASE_API_KEY</code> to <code>NMadmin/.env</code> then restart
-                the dev server.
+                Firebase is not configured. For local: set <code>VITE_FIREBASE_API_KEY</code> in{' '}
+                <code>.env</code> and restart. For live: redeploy admin with Firebase config
+                included.
               </p>
             ) : null}
 
